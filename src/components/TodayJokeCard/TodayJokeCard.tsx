@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { FavFilledIcon, FavOutlinedIcon } from "@assets";
 import { Joke } from "@types";
 import Animated, {
   FadeIn,
@@ -9,6 +8,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import { styles } from './style';
+import { LikeButton } from "@components";
 
 interface JokeCardProps {
   currentJoke: Joke,
@@ -50,7 +50,7 @@ export const TodayJokeCard: FC<JokeCardProps> = ({ isLiked, currentJoke, onPress
               ]}
               entering={FadeIn.delay(600)}
             >
-              {isLiked ? <FavFilledIcon /> : <FavOutlinedIcon />}
+              <LikeButton isLiked={isLiked} />
             </Animated.View>
           </TouchableOpacity>) : null}
       </Animated.View>

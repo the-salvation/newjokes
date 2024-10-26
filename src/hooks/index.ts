@@ -1,0 +1,1 @@
+export { useJokesHistory } from './useJokesHistory';

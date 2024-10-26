@@ -1,10 +1,10 @@
 import { FC } from "react";
-import { FavFilledIcon, FavOutlinedIcon } from "@assets";
-import { Joke } from "@types";
-import { HISTORY_ICON_DIMENSIONS } from "@utils";
 import { View, Text, TouchableOpacity } from "react-native";
+import { HISTORY_ICON_DIMENSIONS } from "@utils";
+import { Joke } from "@types";
 
 import { styles } from './style';
+import { LikeButton } from "@components";
 
 interface JokeCardProps {
   joke: Joke,
@@ -24,11 +24,7 @@ export const HistoryJokeCard: FC<JokeCardProps> = ({ joke, isLiked, onToggleLike
       onPress={() => onToggleLike(joke.id)}
       style={[styles.likeButton, isLiked && styles.likeButtonActive]}
     >
-      {isLiked ? (
-        <FavFilledIcon {...HISTORY_ICON_DIMENSIONS} />
-      ) : (
-        <FavOutlinedIcon {...HISTORY_ICON_DIMENSIONS} />
-      )}
+      <LikeButton isLiked={isLiked} sizes={HISTORY_ICON_DIMENSIONS} />
     </TouchableOpacity>
   </View>
 );
