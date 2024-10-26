@@ -13,14 +13,9 @@ const storageKeys = {
 export const saveJoke = async (joke: Joke) => {
   const jokes = await getSavedJokes();
   const likedJokes = JSON.parse(storage.getString(storageKeys.likedJokes) || '{}') as Record<string, boolean>;
-  console.log('JOKES', jokes);
 
   if (jokes.length >= JOKES_LIMIT) {
-    console.log('OLDEST JOKE', jokes[0]);
-
     const oldestJoke = jokes.shift();
-    console.log('OLDEST JOKE', oldestJoke, jokes);
-
     const isOldestLiked = oldestJoke && likedJokes[oldestJoke.id];
 
     if (isOldestLiked) delete likedJokes[oldestJoke.id];
