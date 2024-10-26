@@ -13,6 +13,7 @@ export const useJokesHistory = () => {
   useEffect(() => {
     const loadJokes = async () => {
       const jokes = await getSavedJokes();
+
       dispatch(setJokesHistory(jokes));
     };
     loadJokes();

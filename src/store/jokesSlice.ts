@@ -37,9 +37,8 @@ export const fetchJoke = createAsyncThunk(ASYNC_ACTIONS.FETCH_JOKE, async (_, { 
   // }
 
   const joke = await fetchJokeFromAPI();
-  console.log('JOKE', joke);
-
   await saveJoke(joke);
+
   return joke;
 });
 
@@ -62,8 +61,11 @@ const jokeSlice = createSlice({
   },
   extraReducers: builder => {
     builder.addCase(fetchJoke.fulfilled, (state, action) => {
-      state.currentJoke = action.payload;
+      const newJoke = action.payload;
+
+      state.currentJoke = newJoke;
       state.lastFetchDate = new Date().toDateString();
+      state.jokesHistory.push(newJoke);
     });
   },
 });

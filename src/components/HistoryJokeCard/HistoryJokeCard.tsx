@@ -17,6 +17,8 @@ export const HistoryJokeCard: FC<JokeCardProps> = ({ joke, isLiked, onToggleLike
     <View style={styles.jokeContent}>
       <Text style={styles.jokeText}>
         {joke.setup || joke.joke}
+      </Text>
+      <Text style={styles.jokeDeliveryText}>
         {joke.delivery ? '\n\n' + joke.delivery : ''}
       </Text>
     </View>

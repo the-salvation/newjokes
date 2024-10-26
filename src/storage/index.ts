@@ -22,6 +22,11 @@ export const saveJoke = async (joke: Joke) => {
   }
 
   jokes.push(joke);
+  console.log('JOKES after push', jokes, joke);
+  console.log(
+    'FOUND NEW JOKE',
+    jokes.find(j => j.id === joke.id),
+  );
 
   storage.set(storageKeys.jokes, JSON.stringify(jokes));
   storage.set(storageKeys.likedJokes, JSON.stringify(likedJokes));

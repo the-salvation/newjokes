@@ -19,6 +19,12 @@ export const styles = StyleSheet.create({
     color: t.black,
     lineHeight: t.lineHeightMedium,
   },
+  jokeDeliveryText: {
+    fontFamily: 'Inter',
+    fontSize: t.fontSmall,
+    color: t.black,
+    lineHeight: t.lineHeightMedium,
+  },
   likeButton: {
     width: t.sizeSmall,
     height: t.sizeSmall,
