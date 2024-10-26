@@ -3,7 +3,7 @@ import { useEffect, useMemo } from 'react';
 import { getSavedJokes } from '@storage';
 import { jokesSelector, setJokesHistory, toggleLike, useAppDispatch, useAppSelector } from '@store';
 
-import { Header, HistoryJokeCard } from '@components';
+import { HistoryJokeCard } from '@components';
 import { Joke } from '@types';
 
 export const useJokesHistory = () => {

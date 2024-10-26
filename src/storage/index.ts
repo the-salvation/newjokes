@@ -1,25 +1,47 @@
+import { JOKES_LIMIT } from '@utils';
 import { MMKV } from 'react-native-mmkv';
 
 import { Joke } from '@types';
 
 const storage = new MMKV();
 
+const storageKeys = {
+  jokes: 'jokes',
+  likedJokes: 'likedJokes',
+} as const;
+
 export const saveJoke = async (joke: Joke) => {
   const jokes = await getSavedJokes();
+  const likedJokes = JSON.parse(storage.getString(storageKeys.likedJokes) || '{}') as Record<string, boolean>;
+  console.log('JOKES', jokes);
+
+  if (jokes.length >= JOKES_LIMIT) {
+    console.log('OLDEST JOKE', jokes[0]);
+
+    const oldestJoke = jokes.shift();
+    console.log('OLDEST JOKE', oldestJoke, jokes);
+
+    const isOldestLiked = oldestJoke && likedJokes[oldestJoke.id];
+
+    if (isOldestLiked) delete likedJokes[oldestJoke.id];
+  }
+
   jokes.push(joke);
-  storage.set('jokes', JSON.stringify(jokes));
+
+  storage.set(storageKeys.jokes, JSON.stringify(jokes));
+  storage.set(storageKeys.likedJokes, JSON.stringify(likedJokes));
 };
 
 export const getSavedJokes = async (): Promise<Joke[]> => {
-  const jokesString = storage.getString('jokes');
+  const jokesString = storage.getString(storageKeys.jokes);
   return jokesString ? JSON.parse(jokesString) : [];
 };
 
 export const saveLikedJokes = (likedJokes: Record<string, boolean>) => {
-  storage.set('likedJokes', JSON.stringify(likedJokes));
+  storage.set(storageKeys.likedJokes, JSON.stringify(likedJokes));
 };
 
 export const getLikedJokes = (): Record<string, boolean> => {
-  const likedJokesString = storage.getString('likedJokes');
+  const likedJokesString = storage.getString(storageKeys.likedJokes);
   return likedJokesString ? JSON.parse(likedJokesString) : {};
 };

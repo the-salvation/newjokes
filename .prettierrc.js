@@ -14,7 +14,7 @@ module.exports = {
     '', // use empty strings to separate groups with empty lines
     '<THIRD_PARTY_MODULES>', // Third party modules (this is a plugin keyword)
     '',
-    '^(@assets|@components|@hooks|@navigator|@screens|@styles|@theme|@types|@utils|@storage|@store)(/.*)?$',
+    '^(@assets|@components|@hooks|@storage|@store|@navigator|@screens|@theme|@types|@utils|@styles)(/.*)?$',
     '',
     '^../(.*)$', // Local imports in parent directories
     '^./(.*)$', // Local imports in current directory
