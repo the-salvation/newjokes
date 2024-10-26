@@ -2,7 +2,11 @@ import React from 'react';
 import { SafeAreaView, Text, useColorScheme } from 'react-native';
 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import { Header } from './components/Header/Header';
+import { NavigationContainer } from '@react-navigation/native';
+import { Provider } from 'react-redux';
+import store from './store/store';
+import { HomeStack } from '@navigator';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const App = (): React.JSX.Element => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -12,10 +16,16 @@ const App = (): React.JSX.Element => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <Text>Hello World</Text>
-      <Header text="Today" />
-    </SafeAreaView>
+    <Provider store={store}>
+      {/* <SafeAreaView style={backgroundStyle}> */}
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Text>Hello World</Text>
+          <HomeStack />
+        </NavigationContainer>
+      </SafeAreaProvider>
+      {/* </SafeAreaView> */}
+    </Provider>
   );
 };
 

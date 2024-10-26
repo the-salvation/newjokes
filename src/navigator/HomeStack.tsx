@@ -2,10 +2,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { homeStackScreens } from '@navigator';
-import { TodayScreen, HistoryScreen } from '@screens';
 
-import { TodayIcon, HistoryIcon } from '@components';
 import { COLORS } from '@styles';
+import { HistoryIcon, TodayIcon } from '@components';
+import { TodayScreen } from '@screens';
+
 export type HomeStackParams = {
   [homeStackScreens.HOME]: undefined;
 };
@@ -41,7 +42,7 @@ export const BottomTabNavStack = () => {
       })}
     >
       <Tab.Screen name={homeStackScreens.TODAY} component={TodayScreen} />
-      <Tab.Screen name={homeStackScreens.HISTORY} component={HistoryScreen} />
+      {/* <Tab.Screen name={homeStackScreens.HISTORY} component={HistoryScreen} /> */}
     </Tab.Navigator>
   );
 }
