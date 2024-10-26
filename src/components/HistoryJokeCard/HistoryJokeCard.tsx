@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { HISTORY_ICON_DIMENSIONS } from "@utils";
+import { LikeButton } from "@components";
 import { Joke } from "@types";
 
 import { styles } from './style';
-import { LikeButton } from "@components";
 
 interface JokeCardProps {
   joke: Joke,
