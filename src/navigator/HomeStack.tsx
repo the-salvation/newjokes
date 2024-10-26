@@ -5,7 +5,7 @@ import { homeStackScreens } from '@navigator';
 
 import { COLORS } from '@styles';
 import { HistoryIcon, TodayIcon } from '@components';
-import { TodayScreen } from '@screens';
+import { HistoryScreen, TodayScreen } from '@screens';
 
 export type HomeStackParams = {
   [homeStackScreens.HOME]: undefined;
@@ -42,7 +42,7 @@ export const BottomTabNavStack = () => {
       })}
     >
       <Tab.Screen name={homeStackScreens.TODAY} component={TodayScreen} />
-      {/* <Tab.Screen name={homeStackScreens.HISTORY} component={HistoryScreen} /> */}
+      <Tab.Screen name={homeStackScreens.HISTORY} component={HistoryScreen} />
     </Tab.Navigator>
   );
 }

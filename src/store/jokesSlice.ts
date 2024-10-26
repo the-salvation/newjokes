@@ -37,6 +37,8 @@ export const fetchJoke = createAsyncThunk(ASYNC_ACTIONS.FETCH_JOKE, async (_, { 
   // }
 
   const joke = await fetchJokeFromAPI();
+  console.log('JOKE', joke);
+
   await saveJoke(joke);
   return joke;
 });

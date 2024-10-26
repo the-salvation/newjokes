@@ -1,13 +1,13 @@
-import { fetchJoke, useAppDispatch } from "@store";
-import { COLORS } from "@styles";
 import React, { useState, useCallback, FC, ReactNode } from "react";
+import { fetchJoke, useAppDispatch } from "@store";
+import { theme as t } from "@theme";
 import { ScrollView, RefreshControl, StyleSheet } from "react-native";
 
 interface RefreshableWrapperProps {
   children: ReactNode;
 }
 
-const RefreshableWrapper: FC<RefreshableWrapperProps> = ({ children }) => {
+export const RefreshableWrapper: FC<RefreshableWrapperProps> = ({ children }) => {
   const [refreshing, setRefreshing] = useState(false);
   const dispatch = useAppDispatch();
 
@@ -28,12 +28,12 @@ const RefreshableWrapper: FC<RefreshableWrapperProps> = ({ children }) => {
         <RefreshControl
           refreshing={refreshing}
           onRefresh={onRefresh}
-          tintColor={COLORS.purple}
-          colors={[COLORS.purple]}
-          progressBackgroundColor={COLORS.white}
+          tintColor={t.purple}
+          colors={[t.purple]}
+          progressBackgroundColor={t.white}
           progressViewOffset={40}
           title="Pull to refresh"
-          titleColor={COLORS.purple}
+          titleColor={t.purple}
         />
       }
     >
@@ -47,5 +47,3 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-
-export { RefreshableWrapper };
