@@ -1,9 +1,10 @@
 import { Joke } from '@types';
 
+import { APP_CONFIG } from '../constants/appConfig';
+
 export const fetchJokeFromAPI = async (): Promise<Joke> => {
-  const url = 'https://v2.jokeapi.dev/joke/Programming';
   try {
-    const response = await fetch(url);
+    const response = await fetch(APP_CONFIG.API_URL);
     const joke: Joke = await response.json();
     return joke;
   } catch (error) {

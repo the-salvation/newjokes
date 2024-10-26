@@ -2,7 +2,7 @@ import { Platform } from 'react-native';
 
 import { moderateScale, moderateVerticalScale, scale, verticalScale } from 'react-native-size-matters';
 
-import { COLORS, FONT_SIZES, lineHeights, shadowSizes, sizes, spacing } from '@styles';
+import { COLORS, FONT_SIZES, LINE_HEIGHTS, shadowSizes, SIZES, SPACING } from '@styles';
 
 import { Theme } from './types';
 
@@ -30,18 +30,18 @@ export const theme: Theme = {
     }),
   },
 
-  // Scaled spacing sizes
-  none: spacing.None,
-  auto: spacing.Auto,
-  miniscule: scale(spacing.Miniscule),
-  smallest: scale(spacing.Smallest),
-  small: scale(spacing.Small),
-  xsmall: scale(spacing.XSmall),
-  medium: scale(spacing.Medium),
-  large: scale(spacing.Large),
-  xlarge: scale(spacing.XLarge),
-  xxlarge: scale(spacing.XXLarge),
-  massive: scale(spacing.Massive),
+  // Scaled SPACING sizes
+  none: SPACING.None,
+  auto: SPACING.Auto,
+  miniscule: scale(SPACING.Miniscule),
+  smallest: scale(SPACING.Smallest),
+  small: scale(SPACING.Small),
+  xsmall: scale(SPACING.XSmall),
+  medium: scale(SPACING.Medium),
+  large: scale(SPACING.Large),
+  xlarge: scale(SPACING.XLarge),
+  xxlarge: scale(SPACING.XXLarge),
+  massive: scale(SPACING.Massive),
 
   // Colors
   white: COLORS.white,
@@ -59,11 +59,11 @@ export const theme: Theme = {
   fontLarge: scale(FONT_SIZES.Large),
 
   // Sizes
-  sizeSmall: sizes.small,
-  sizeLarge: sizes.large,
+  sizeSmall: SIZES.small,
+  sizeLarge: SIZES.large,
 
   // Line heights
-  lineHeightSmall: lineHeights.small,
-  lineHeightMedium: lineHeights.medium,
-  lineHeightLarge: lineHeights.large,
+  lineHeightSmall: LINE_HEIGHTS.small,
+  lineHeightMedium: LINE_HEIGHTS.medium,
+  lineHeightLarge: LINE_HEIGHTS.large,
 };

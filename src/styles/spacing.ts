@@ -1,4 +1,4 @@
-export const spacing = {
+export const SPACING = {
   None: 0,
   Auto: 'auto',
   Miniscule: 2,
@@ -12,12 +12,12 @@ export const spacing = {
   Massive: 192,
 } as const;
 
-export const sizes = {
+export const SIZES = {
   small: 48,
   large: 74,
 };
 
-export const lineHeights = {
+export const LINE_HEIGHTS = {
   small: 22,
   medium: 26,
   large: 36,
