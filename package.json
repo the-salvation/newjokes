@@ -10,12 +10,18 @@
     "test": "jest"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.3.0",
     "@serverless-guru/prettier-plugin-import-order": "^0.4.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
     "react": "18.3.1",
-    "react-native": "0.76.0"
+    "react-native": "0.76.0",
+    "react-native-mmkv": "^3.1.0",
+    "react-native-screens": "^3.35.0",
+    "react-native-size-matters": "^0.4.2",
+    "react-native-svg": "^15.8.0",
+    "react-redux": "^9.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
