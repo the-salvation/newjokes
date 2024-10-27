@@ -10,19 +10,17 @@ export type BottomTabNavStackParams = {
 
 const Tab = createBottomTabNavigator<BottomTabNavStackParams>();
 
-export const BottomTabNavStack = () => {
-  return (
-    <Tab.Navigator
-      screenOptions={{
-        tabBarLabelStyle: {
-          flex: 1,
-          textAlign: 'center',
-          paddingBottom: 10,
-        },
-      }}
-    >
-      <Tab.Screen name={homeStackScreens.TODAY} component={TodayScreen} />
-      <Tab.Screen name={homeStackScreens.HISTORY} component={HistoryScreen} />
-    </Tab.Navigator>
-  );
-}
+export const BottomTabNavStack = () => (
+  <Tab.Navigator
+    screenOptions={{
+      tabBarLabelStyle: {
+        flex: 1,
+        textAlign: 'center',
+        paddingBottom: 10,
+      },
+    }}
+  >
+    <Tab.Screen name={homeStackScreens.TODAY} component={TodayScreen} />
+    <Tab.Screen name={homeStackScreens.HISTORY} component={HistoryScreen} />
+  </Tab.Navigator>
+);

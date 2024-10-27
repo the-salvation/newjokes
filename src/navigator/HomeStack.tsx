@@ -29,10 +29,9 @@ export const BottomTabNavStack = () => {
           paddingHorizontal: 100
         },
         tabBarIcon: ({ focused }) => {
-          if (route.name === homeStackScreens.TODAY) {
-            return <TodayIcon focused={focused} />;
-          }
-          return <HistoryIcon focused={focused} />;
+          return route.name === homeStackScreens.TODAY
+            ? <TodayIcon focused={focused} />
+            : <HistoryIcon focused={focused} />;
         },
         tabBarActiveTintColor: COLORS.purple,
         tabBarInactiveTintColor: COLORS.grey,

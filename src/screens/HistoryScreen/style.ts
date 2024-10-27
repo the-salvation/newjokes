@@ -14,13 +14,6 @@ export const styles = StyleSheet.create({
   header: {
     paddingLeft: t.medium,
   },
-  listContent: {
-    paddingTop: t.smallest,
-  },
-  separator: {
-    height: 1,
-    backgroundColor: t.lightGray,
-  },
   jokeCard: {
     backgroundColor: t.white,
     flexDirection: 'row',

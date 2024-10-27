@@ -30,7 +30,7 @@ export const theme: Theme = {
     }),
   },
 
-  // Scaled SPACING sizes
+  // Scaled spacing sizes
   none: SPACING.None,
   auto: SPACING.Auto,
   miniscule: scale(SPACING.Miniscule),
