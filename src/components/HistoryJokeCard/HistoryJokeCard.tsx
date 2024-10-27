@@ -23,8 +23,9 @@ export const HistoryJokeCard: FC<JokeCardProps> = ({ joke, isLiked, onToggleLike
       </Text>
     </View>
     <TouchableOpacity
-      onPress={() => onToggleLike(joke.id)}
+      // onPress={() => onToggleLike(joke.id)} // not sure if we need a possibility to toggle likes in history
       style={[styles.likeButton, isLiked && styles.likeButtonActive]}
+      activeOpacity={1}
     >
       <LikeButton isLiked={isLiked} sizes={HISTORY_ICON_DIMENSIONS} />
     </TouchableOpacity>

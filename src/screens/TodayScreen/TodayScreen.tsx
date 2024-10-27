@@ -35,6 +35,7 @@ export const TodayScreen = () => {
   }
 
   const isLiked = likedJokes[currentJoke.id];
+
   const onPressToggleLike = () => dispatch(toggleLike(currentJoke.id));
 
   return (
